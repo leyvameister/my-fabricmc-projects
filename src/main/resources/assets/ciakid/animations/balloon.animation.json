@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.balloon.new": {
+			"loop": true,
+			"animation_length": 20,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": {
+							"vector": [10, 0, -6]
+						},
+						"5.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [-10, 0, 6]
+						},
+						"15.0": {
+							"vector": [0, 0, 0]
+						},
+						"20.0": {
+							"vector": [10, 0, -6]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

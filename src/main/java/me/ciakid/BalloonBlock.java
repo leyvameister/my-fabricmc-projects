@@ -15,13 +15,12 @@ public class BalloonBlock extends BlockWithEntity {
     }
 
     @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec() {
-        return createCodec(BalloonBlock::new);
+    protected MapCodec<? extends BlockWithEntity> getCodec() {return createCodec(BalloonBlock::new);
     }
 
     @Override
     protected BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
+        return BlockRenderType.ENTITYBLOCK_ANIMATED;
     }
 
     @Nullable
@@ -29,5 +28,7 @@ public class BalloonBlock extends BlockWithEntity {
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new BalloonBlockEntity(pos, state);
     }
+
+
 
 }

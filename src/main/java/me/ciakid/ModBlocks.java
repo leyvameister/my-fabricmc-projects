@@ -12,7 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
-    public static final Block BALLOON = register("balloon", new BalloonBlock(Block.Settings.create()));
+    public static final Block BALLOON = register("balloon", new BalloonBlock(Block.Settings.create().nonOpaque()));
 
     private static <T extends Block> T register(String name, T block) {
         Registry.register(Registries.BLOCK, Identifier.of(Main.MOD_ID, name), block);
@@ -22,6 +22,7 @@ public class ModBlocks {
     }
 
     public static void initialize() {
+
     }
 }
 
