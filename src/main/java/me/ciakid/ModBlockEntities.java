@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 public class ModBlockEntities {
 
     public static final BlockEntityType<BalloonBlockEntity> BALLOON_BLOCK_ENTITY = register("balloon", BalloonBlockEntity::new,
-            ModBlocks.BALLOON);
+            ModBlocks.BALLOON.getLeft());
 
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType.BlockEntityFactory<? extends T> entityFactory, Block... blocks) {
         Identifier id = Identifier.of(Main.MOD_ID, name);

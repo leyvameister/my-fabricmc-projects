@@ -10,15 +10,20 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Pair;
 
 public class ModBlocks {
-    public static final Block BALLOON = register("balloon", new BalloonBlock(Block.Settings.create().nonOpaque()));
+    public static final Pair<Block, BlockItem> BALLOON = register("balloon", new BalloonBlock(Block.Settings.create().nonOpaque()));
 
-    private static <T extends Block> T register(String name, T block) {
-        Registry.register(Registries.BLOCK, Identifier.of(Main.MOD_ID, name), block);
-        Registry.register(Registries.ITEM, Identifier.of(Main.MOD_ID, name),
-                new BlockItem(block, new Item.Settings()));
-        return block;
+    private static <T extends Block> Pair<T, BlockItem> register(String name, T block) {
+        Identifier id = Identifier.of(Main.MOD_ID, name);
+
+        Registry.register(Registries.BLOCK, id, block);
+        BlockItem blockItem = new BlockItem(block, new Item.Settings());
+        Registry.register(Registries.ITEM, id, blockItem);
+
+        return new Pair<>(block, blockItem);
+
     }
 
     public static void initialize() {

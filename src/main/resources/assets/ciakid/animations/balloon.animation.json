@@ -1,31 +1,661 @@
 {
-	"format_version": "1.8.0",
-	"animations": {
-		"animation.balloon.new": {
-			"loop": true,
-			"animation_length": 20,
-			"bones": {
-				"root": {
-					"rotation": {
-						"0.0": {
-							"vector": [10, 0, -6]
-						},
-						"5.0": {
-							"vector": [0, 0, 0]
-						},
-						"10.0": {
-							"vector": [-10, 0, 6]
-						},
-						"15.0": {
-							"vector": [0, 0, 0]
-						},
-						"20.0": {
-							"vector": [10, 0, -6]
-						}
-					}
-				}
-			}
-		}
-	},
-	"geckolib_format_version": 2
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.balloon.sway": {
+      "loop": true,
+      "animation_length": 15,
+      "bones": {
+        "balloon": {
+          "rotation": {
+            "vector": [
+              "math.sin(query.anim_time * 60) * 3",
+              0,
+              "math.sin(query.anim_time * 120) * 5"
+            ]
+          }
+        }
+      }
+    },
+    "animation.balloon.scale0": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1,
+                1,
+                1
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale1": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -1.07,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1,
+                1,
+                1
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1.13,
+                1.13,
+                1.13
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale2": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -1.07,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -2.13,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1.13,
+                1.13,
+                1.13
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1.27,
+                1.27,
+                1.27
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale3": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -2.13,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -3.2,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1.27,
+                1.27,
+                1.27
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1.4,
+                1.4,
+                1.4
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale4": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -3.2,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -4.27,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1.4,
+                1.4,
+                1.4
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1.53,
+                1.53,
+                1.53
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale5": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -4.27,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -5.33,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1.53,
+                1.53,
+                1.53
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1.67,
+                1.67,
+                1.67
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale6": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -5.33,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -6.4,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1.67,
+                1.67,
+                1.67
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1.8,
+                1.8,
+                1.8
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale7": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -6.4,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -7.47,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1.8,
+                1.8,
+                1.8
+              ]
+            },
+            "1.0": {
+              "vector": [
+                1.93,
+                1.93,
+                1.93
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale8": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -7.47,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -8.53,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                1.93,
+                1.93,
+                1.93
+              ]
+            },
+            "1.0": {
+              "vector": [
+                2.07,
+                2.07,
+                2.07
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale9": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -8.53,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -9.6,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                2.07,
+                2.07,
+                2.07
+              ]
+            },
+            "1.0": {
+              "vector": [
+                2.2,
+                2.2,
+                2.2
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale10": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -9.6,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -10.67,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                2.2,
+                2.2,
+                2.2
+              ]
+            },
+            "1.0": {
+              "vector": [
+                2.33,
+                2.33,
+                2.33
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale11": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -10.67,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -11.73,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                2.33,
+                2.33,
+                2.33
+              ]
+            },
+            "1.0": {
+              "vector": [
+                2.47,
+                2.47,
+                2.47
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale12": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -11.73,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -12.8,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                2.47,
+                2.47,
+                2.47
+              ]
+            },
+            "1.0": {
+              "vector": [
+                2.6,
+                2.6,
+                2.6
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale13": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -12.8,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -13.87,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                2.6,
+                2.6,
+                2.6
+              ]
+            },
+            "1.0": {
+              "vector": [
+                2.73,
+                2.73,
+                2.73
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale14": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -13.87,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -14.93,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                2.73,
+                2.73,
+                2.73
+              ]
+            },
+            "1.0": {
+              "vector": [
+                2.87,
+                2.87,
+                2.87
+              ]
+            }
+          }
+        }
+      }
+    },
+    "animation.balloon.scale15": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1,
+      "bones": {
+        "balloon": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                -14.93,
+                0
+              ]
+            },
+            "1.0": {
+              "vector": [
+                0,
+                -16.0,
+                0
+              ]
+            }
+          },
+          "scale": {
+            "0.0": {
+              "vector": [
+                2.87,
+                2.87,
+                2.87
+              ]
+            },
+            "1.0": {
+              "vector": [
+                3.0,
+                3.0,
+                3.0
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "geckolib_format_version": 2
 }

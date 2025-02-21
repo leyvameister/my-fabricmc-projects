@@ -3,6 +3,10 @@ package me.ciakid;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.multiplayer.ConnectScreen;
@@ -10,7 +14,9 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.network.ServerAddress;
 import net.minecraft.client.network.ServerInfo;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.BlockPos;
 
 
 public class MainClient implements ClientModInitializer {
@@ -19,8 +25,6 @@ public class MainClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockEntityRendererFactories.register(ModBlockEntities.BALLOON_BLOCK_ENTITY, BalloonBlockEntityRenderer::new);
-
-
         // Registering an event to initialize the screen after the client is ready.
 //        ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
 //            if (screen instanceof TitleScreen) {
@@ -54,7 +58,6 @@ class TutorialScreen extends Screen {
 
 
     }
-
     private void connectToServer(String ip) {
         MinecraftClient client = MinecraftClient.getInstance();
         ServerAddress serverAddress = ServerAddress.parse(ip);
